@@ -1,5 +1,6 @@
 import pytube
 
+
 def download_video(url, resolution):
     itag = choose_resolution(resolution)
     video = pytube.YouTube(url)
@@ -7,13 +8,16 @@ def download_video(url, resolution):
     stream.download()
     return stream.default_filename
 
+
 def download_videos(urls, resolution):
     for url in urls:
         download_video(url, resolution)
 
+
 def download_playlist(url, resolution):
     playlist = pytube.Playlist(url)
     download_videos(playlist.video_urls, resolution)
+
 
 def choose_resolution(resolution):
     if resolution in ["low", "360", "360p"]:
