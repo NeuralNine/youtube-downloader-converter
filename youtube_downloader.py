@@ -21,7 +21,7 @@ def download_videos(urls, resolution):
     all_urls = urls
     resolutions = cycle([resolution])
     
-    with ThreadPoolExecutor() as ex:
+    with ThreadPoolExecutor(max_workers=5) as ex:
         list(tqdm(ex.map(download_video, all_urls, resolutions), total=len(all_urls)))
     
 
