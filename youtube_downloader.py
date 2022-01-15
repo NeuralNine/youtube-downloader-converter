@@ -1,11 +1,14 @@
-import pytube
+import pytube, os
 from tqdm import tqdm
+
+if not os.path.exists('downloaded'):
+    os.makedirs('downloaded')
 
 def download_video(url, resolution):
     itag = choose_resolution(resolution)
     video = pytube.YouTube(url)
     stream = video.streams.get_by_itag(itag)
-    stream.download('/downloaded')
+    stream.download(output_path='downloaded')
     return stream.default_filename
 
 def download_videos(urls, resolution):
