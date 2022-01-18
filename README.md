@@ -8,7 +8,7 @@ THIS IS FOR EDUCATIONAL PURPOSES ONLY!
 
 
 To-Do:
-+ add downloading folder
-+ add multithreading to increase the speed
-+ fix the too many requests proplem
-+ ehance and fix the add downloading folder
++ <s>add downloading folder</s>
++ <s>add multithreading to increase the speed</s>
++ <s>fix the too many requests proplem</s>
++ enhance and fix the add downloading folder
