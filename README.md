@@ -9,3 +9,6 @@ THIS IS FOR EDUCATIONAL PURPOSES ONLY!
 
 To-Do:
 + add downloading folder
++ add multithreading to increase the speed
++ fix the too many requests proplem
++ ehance and fix the add downloading folder
