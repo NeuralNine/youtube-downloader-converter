@@ -6,6 +6,8 @@ WARNING: DOWNLOADING COPYRIGHTED MATERIAL IS HIGHLY ILLEGAL!
 I DO NOT TAKE ANY RESPONSIBILITY FOR YOUR USAGE OF THIS TOOL!
 THIS IS FOR EDUCATIONAL PURPOSES ONLY!
 
+<pre>pip install tqdm</pre>
+<pre>pip install pytube</pre>
 
 To-Do:
 + <s>add downloading folder</s>
