@@ -1,15 +1,29 @@
-import pytube
+import pytube, os
+from tqdm import tqdm
+from itertools import cycle
+from concurrent.futures import ThreadPoolExecutor
+
+if not os.path.exists('downloaded'):
+    os.makedirs('downloaded')
 
 def download_video(url, resolution):
     itag = choose_resolution(resolution)
     video = pytube.YouTube(url)
     stream = video.streams.get_by_itag(itag)
-    stream.download()
+    stream.download(output_path='downloaded')
     return stream.default_filename
 
 def download_videos(urls, resolution):
-    for url in urls:
-        download_video(url, resolution)
+    
+#     for url in tqdm(urls):
+#         download_video(url, resolution)
+        
+    all_urls = urls
+    resolutions = cycle([resolution])
+    
+    with ThreadPoolExecutor(max_workers=5) as ex:
+        list(tqdm(ex.map(download_video, all_urls, resolutions), total=len(all_urls)))
+    
 
 def download_playlist(url, resolution):
     playlist = pytube.Playlist(url)

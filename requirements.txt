@@ -1,0 +1,3 @@
+pytube==10.4.1
+moviepy==1.0.3
+tqdm==4.62.2
